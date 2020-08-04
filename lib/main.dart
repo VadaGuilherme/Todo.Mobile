@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simpletodo/components/avatar.widget.dart';
 import 'package:simpletodo/components/button.widget.dart';
 import 'package:simpletodo/theme/app.theme.dart';
 
@@ -22,11 +23,20 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: STDButton(
-          text: "",
-          callback: () {},
-        ),
+      body: Column(
+        children: <Widget>[
+          SizedBox(
+            height: 40,
+          ),
+          STDButton(
+            text: null,
+            callback: null,
+          ),
+          STDAvatar(
+            path: "https://placehold.ti/200",
+            width: 120,
+          ),
+        ],
       ),
     );
   }
