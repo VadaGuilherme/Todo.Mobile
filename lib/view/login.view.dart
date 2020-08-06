@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:simpletodo/widgets/busy.widget.dart';
 import 'package:simpletodo/components/button.widget.dart';
-import 'package:todo/components/button.widget.dart';
-import 'package:todo/controllers/login.controller.dart';
-import 'package:todo/views/home.view.dart';
-import 'package:todo/widgets/busy.widget.dart';
+import 'package:simpletodo/controller/login.controller.dart';
+import 'package:simpletodo/view/home.view.dart';
 
 class LoginView extends StatefulWidget {
   @override
@@ -55,7 +54,7 @@ class _LoginViewState extends State<LoginView> {
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(30),
-          child: TDBusy(
+          child: STDBusy(
             busy: busy,
             child: Card(
               child: Column(
@@ -68,7 +67,7 @@ class _LoginViewState extends State<LoginView> {
                     width: 250,
                   ),
                   Text(
-                    "Olá desconhecido",
+                    "Você ainda não está logado :(",
                     style: TextStyle(
                       fontSize: 20,
                     ),

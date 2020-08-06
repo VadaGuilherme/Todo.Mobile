@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "717594995179",
+    "firebase_url": "https://todos-5c59a.firebaseio.com",
+    "project_id": "todos-5c59a",
+    "storage_bucket": "todos-5c59a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717594995179:android:94bc235e938094124b91ae",
+        "android_client_info": {
+          "package_name": "com.vada.simpletodo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "717594995179-kogbrnqr5ro4cc9c5hfopmq51qvfsgkm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vada.simpletodo",
+            "certificate_hash": "06ecb1e2b1553ad6e4801c7b529b5d6231b4e219"
+          }
+        },
+        {
+          "client_id": "717594995179-6kl61vmd6ll80385vl6oos6bflsme0fl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMElJV8O-QcgDh1UOCeVLCbpryu1L5Bes"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "717594995179-6kl61vmd6ll80385vl6oos6bflsme0fl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

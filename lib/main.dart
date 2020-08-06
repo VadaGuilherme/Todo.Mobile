@@ -1,42 +1,40 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:simpletodo/components/avatar.widget.dart';
-import 'package:simpletodo/components/button.widget.dart';
+import 'package:provider/provider.dart';
+import 'package:simpletodo/stores/app.store.dart';
 import 'package:simpletodo/theme/app.theme.dart';
+import 'package:simpletodo/view/login.view.dart';
+
+// Esta classe permite acesso ao LocalHost com certificados HTTPS inválidos
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext context) {
+    HttpClient client = super.createHttpClient(context);
+    client.badCertificateCallback =
+        (X509Certificate cert, String host, int port) => true;
+    return client;
+  }
+}
 
 void main() {
+  HttpOverrides.global = new MyHttpOverrides();
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Simple Todo by Vada',
-      theme: appTheme(),
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: <Widget>[
-          SizedBox(
-            height: 40,
-          ),
-          STDButton(
-            text: null,
-            callback: null,
-          ),
-          STDAvatar(
-            path: "https://placehold.ti/200",
-            width: 120,
-          ),
-        ],
+    return MultiProvider(
+      providers: [
+        Provider<AppStore>.value(
+          value: AppStore(),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'Simple Todo by Vada',
+        debugShowCheckedModeBanner: false,
+        theme: appTheme(),
+        home: LoginView(),
       ),
     );
   }
